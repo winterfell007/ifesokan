@@ -56,3 +56,5 @@ if (isset($_POST['btn'])) {
 	</div>
 </body>
 </html>
+
+<!---- <input type class="bUTTON"
