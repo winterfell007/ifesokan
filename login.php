@@ -56,3 +56,9 @@ if (isset($_POST['btn'])) {
 	</div>
 </body>
 </html>
+
+</html>
+
+<!-- jUST EDITED THE PAGE-->
+
+
