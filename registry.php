@@ -36,7 +36,7 @@
 
           </li>
             <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#Approved"  >Approved</a>
+            <a class="nav-link" data-toggle="modal" data-target="#Approved">Approved</a>
            </li>
         </div>
         </li>
@@ -62,7 +62,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Registered Users</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,7 +78,7 @@
     // $mem=$rows['Membership'];
    // $mem=$rows['Memebership']=='Secreatary'
     // echo "<table>";
-     echo "<div class='modal-body'><table style='color:red'>";
+     echo "<div id='scroll' class='modal-body' style='overflow: scroll'><table style='color:dimgrey'>";
             echo  "<tr>";
     echo "<th>ID</th>";
    echo  "<th>Firstname</th>";
