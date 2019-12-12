@@ -44,20 +44,20 @@ if (isset($_POST['btn'])) {
 }
 ?>
 	<title>login</title>
-	<link rel="stylesheet" type="text/css" href="login.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/global.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-	
+	<link rel="stylesheet" type="text/css" href="login.css">
+
 </head>
 <body>
 
 <section class="container-fluid bg">
-	<section class="row justify-content-center">
-		<section class="col-12 col-sm-6 col-md-3">
+	<section class="row justify-content-center ">
+		<section class="col-12 col-sm-6 col-md-3" id="form-card" style="background: #fff; margin: 50px auto; padding: 30px 20px; border-radius: 5px; box-shadow: 1px 1px 5px grey">
 	 <?php include("errors.php"); ?>
-<form class="form-container" method="POST">
+<form class="form-container " method="POST">
   <div class="form-group">
     <label for="exampleFormControlSelect1">Enter CDA</label>
     <select name="cda" class="form-control" id="exampleFormControlSelect1">
