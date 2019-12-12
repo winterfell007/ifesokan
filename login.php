@@ -20,12 +20,14 @@ if ($conn->connect_error) {
 if (isset($_POST['btn'])) {
 	$username=$_POST['username'];
 	$userpassword=$_POST['password'];
+	$cda = $_POST['cda'];
 	if (count($errors)==0) {
 		$query="SELECT * FROM users WHERE Username='$username' AND Password='$userpassword'";
 		$result=mysqli_query($conn, $query);
 		if (mysqli_num_rows($result)==1) {
 			$_SESSION['Username']=$username;
 			$_SESSION['success']='logged in';
+			$_SESSION['cda'] = $cda;
 			$row=mysqli_fetch_array($result);
 			if ($row['approval']=='0') {
 			array_push($errors, "Still Awaiting Approval");
@@ -61,7 +63,7 @@ if (isset($_POST['btn'])) {
     <select name="cda" class="form-control" id="exampleFormControlSelect1">
       <option value="ifesokan">Ifesokan</option>
       <option value="irewolde">Irewolde</option>
-      <option value="ifesuwapo">Ifesuwapo</option>
+      <option value="ifesowapo">Ifesowapo</option>
       <option value="estaport">Estaport</option>
       <option value="jajo">Jajo</option>
     </select>
