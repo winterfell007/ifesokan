@@ -1,4 +1,7 @@
-
+<?php
+  session_start();
+  include("server.php");
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial scale=1.0">
@@ -11,7 +14,7 @@
   <header>
     
       <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="#">Icda</a>
+          <a class="navbar-brand" href="#">Icda <?php $_SESSION['cda'] ?></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
@@ -93,7 +96,7 @@
     $r2=mysqli_fetch_array($r1);
    // $mem=$rows['Membership'];
      if ($r2['Membership']=="Secretary") {
-       echo "<form method='POST' action='update.php'><tr><td><input name='id' disabled class='borderless' value='".($rows['user_id'])."'/></td><td>".($rows['Firstname'])."</td><td>".($rows['Lastname'])."</td><td>".($rows['ZoneCode'])."</td><td><input name='view' type='button' value='View' class='btn btn-primary'></input><input name='Approve' value='Approve' disabled type='submit' class='btn btn-danger'></input></td></tr></form>";  
+       echo "<form method='POST' action='update.php'><tr><td><input name='id' disabled class='borderless' value='".($rows['user_id'])."'/></td><td>".($rows['Firstname'])."</td><td>".($rows['Lastname'])."</td><td>".($rows['ZoneCode'])."</td><td><input name='view' type='button' value='View' class='btn btn-primary'></input></td></tr></form>";  
  }
  if ($r2['Membership']=="Chairman") {
        echo "<form method='POST' action='update.php'><tr><td><input name='id' class='borderless' value='".($rows['user_id'])."'/></td><td>".($rows['Firstname'])."</td><td>".($rows['Lastname'])."</td><td>".($rows['ZoneCode'])."</td><td><input name='view' type='button' value='View' class='btn btn-primary'></input><input name='Approve' value='Approve' type='submit' class='btn btn-danger'></input></td></tr></form>";  
