@@ -38,13 +38,8 @@
         echo "<li class='nav-item dropdown'>
             <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> SEC </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-<<<<<<< HEAD
               <a class='dropdown-item' href='viewminutes.php'>View Minutes</a>
               <a class='dropdown-item' href='uploadminutes.php'>Upload Minutes</a>
-=======
-              <a class='dropdown-item' href='viewminute.html'>Minutes</a>
-              <a class= 'dropdown-item'href='uploadminute.html'>Uplaod Minute</a>
->>>>>>> e522bfe0dc1359b8fcf7d814a5880d003c06d5d5
               <a class='dropdown-item' href='registry.php'>Registry</a>
              
 
