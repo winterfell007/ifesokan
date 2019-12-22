@@ -103,7 +103,7 @@ if (count($errors)==0) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Download</button>
+        <a href="#" onclick="downloadImage(this)" download><button type="button" class="btn btn-primary">Download</button></a>
       </div>
     </div>
   </div>
@@ -122,6 +122,10 @@ if (count($errors)==0) {
    document.querySelector('#modalImage').src = imgURL;
  }
 
+function downloadImage(linkElement) {
+    var myImage = document.querySelector('#modalImage');
+    linkElement.href = myImage.src;
+}
 
 </script>
 
