@@ -3,38 +3,27 @@
 <head>
 <?php 
 session_start();
-$servername = "localhost";
-$user = "root";
-$userpassword="";
-$dbname = $_POST['cda'];
-$username = "";
-$password = "";
-$errors=array();
-$conn = new mysqli($servername, $user, $userpassword, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}else{
-	// echo "connected";
-}
+
 if (isset($_POST['btn'])) {
 	$username=$_POST['username'];
-	$userpassword=$_POST['password'];
+	$password=$_POST['password'];
 	$cda = $_POST['cda'];
+	$_SESSION['cda'] = $cda;
+	include('connection.php');
 	if (count($errors)==0) {
-		$query="SELECT * FROM users WHERE Username='$username' AND Password='$userpassword'";
+		$query="SELECT * FROM users WHERE Username='$username' AND Password='$password'";
 		$result=mysqli_query($conn, $query);
 		if (mysqli_num_rows($result)==1) {
 			$_SESSION['Username']=$username;
 			$_SESSION['success']='logged in';
-			$_SESSION['cda'] = $cda;
+			
 			$row=mysqli_fetch_array($result);
 			if ($row['approval']=='0') {
 			array_push($errors, "Still Awaiting Approval");
 
 			}
 			else{
-			header("location:nairaland.php");
+			 header("location:nairaland.php");
 		}
 	}
 		else{
@@ -49,13 +38,21 @@ if (isset($_POST['btn'])) {
 	<link rel="stylesheet" type="text/css" href="css/global.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="login.css">
-
+<style>
+	.icda{
+		color: black;
+		font-size: 25px;
+		margin: 10px;
+		position: fixed;
+	}
+</style>
 </head>
 <body>
+<a href="login.php" class='icda'> <b>ICDA</b></a>
 
 <section class="container-fluid bg">
 	<section class="row justify-content-center ">
-		<section class="col-12 col-sm-6 col-md-3" id="form-card" style="background: #fff; margin: 50px auto; padding: 30px 20px; border-radius: 5px; box-shadow: 1px 1px 5px grey">
+		<section class="col-12 col-sm-6 col-md-3" id="form-card" >
 	 <?php include("errors.php"); ?>
 <form class="form-container " method="POST">
   <div class="form-group">
