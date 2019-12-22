@@ -27,13 +27,14 @@
            </li>
  <?php 
    
-   $mem='';
+
    $user=$_SESSION['Username'];
     $query="SELECT * FROM users WHERE Username='$user'";
     $result=mysqli_query($conn, $query);
     $rows=mysqli_fetch_array($result);
     $mem=$rows['Membership'];
-   // $mem=$rows['Memebership']=='Secreatary'
+    $_SESSION['Membership'] = $mem;
+
       if ($rows['Membership']=="Secretary") {
         echo "<li class='nav-item dropdown'>
             <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> SEC </a>

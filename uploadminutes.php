@@ -1,5 +1,8 @@
 <?php 
  session_start();
+ if($_SESSION['Membership'] != 'Secretary'){
+	 header('Location: viewminutes.php');
+ }
 ?>
 <!DOCTYPE html>
 <html><head>
