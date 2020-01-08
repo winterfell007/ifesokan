@@ -1,0 +1,168 @@
+/*--Custom stylesheet*/
+
+
+body{
+	background: lightblues;
+}
+
+/* Navabr decoration*/
+.bg-light{
+	background
+}
+
+.navbar-brand{
+	font-size:  40PX;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: purple !important;
+    text-shadow: 3px 3px 5px #777;
+    margin-left: 70px;
+    margin-top: 4px
+}
+
+.bg-light a{
+	margin-right: 30px;
+	color: #181874 !important;
+	border-bottom: 2px solid transparent;
+}
+
+
+.bg-light a:hover{
+border-bottom: 2px solid #181874;
+}
+
+.active a {
+	border-bottom: 2px solid #181874;
+}
+
+
+.mrt a{
+	background: #181874;
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 10px 25px !important;
+    box-shadow: 3px 3px 5px #777;
+    width: 120px;
+    text-align: center;
+}
+
+.mrt a:hover {
+	background: red;
+    box-shadow: none;
+    
+}
+.navbar-brand:hover{
+	border-bottom: 2px solid transparent !important;
+
+	}
+
+
+@media only screen and (max-width: 1140px){
+	.navbar-brand{
+		margin-left: 10px;
+
+	}
+} 
+
+@media only screen and (max-width: 991px){
+	.mrt a{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		
+	}
+} 
+
+
+/*--- sliders --*/
+.carousel-caption{
+	margin-bottom: 200px;
+    padding: 50px 100px;
+    width: 50%;
+   
+}
+
+.carousel-caption h5{
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+.carousel-caption p {
+	font-size: 10px;
+}
+
+.drk:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	opacity: 0.5;
+}
+
+@media only screen and (max-width: 1600px){
+	.carousel-caption{
+		margin:10%;
+		width: 50%;
+	}
+}
+/* Buttons  */
+
+.btn-primary{
+	background-color: #e42448
+    border-color: transparent #e42448;
+    background: #181874;
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 10px 25px !important;
+    width: 130px;
+    text-align: center;
+    margin:10px ;
+}
+
+.btn-primary:hover{
+	background:#3B31AD;
+
+}
+
+.btn-success{
+	background-color: 
+    border-color: transparent ;
+    background: 
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 10px 25px !important;
+    width: 130px;
+    text-align: center;
+    margin:10px ;
+}
+
+.btn-success:hover{
+	background:#3B31AD;
+
+}
+
+.btn-warning{
+	background-color: 
+    border-color: transparent 
+    background: 
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 10px 25px !important;
+    width: 130px;
+    text-align: center;
+    margin:10px ;
+}
+
+.btn-warning:hover{
+	background:#3B31AD;
+
+}
+
+.frt{
+	float: right;
+}
+
+
