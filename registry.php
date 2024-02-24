@@ -1,4 +1,7 @@
-
+<?php
+  session_start();
+  include("server.php");
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial scale=1.0">
@@ -11,7 +14,7 @@
   <header>
     
       <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="#">Icda</a>
+          <a class="navbar-brand" href="#">Icda <?php $_SESSION['cda'] ?></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
@@ -36,7 +39,7 @@
 
           </li>
             <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#Approved"  >Approved</a>
+            <a class="nav-link" data-toggle="modal" data-target="#Approved">Approved</a>
            </li>
         </div>
         </li>
@@ -62,7 +65,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Registered Users</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,7 +81,7 @@
     // $mem=$rows['Membership'];
    // $mem=$rows['Memebership']=='Secreatary'
     // echo "<table>";
-     echo "<div class='modal-body'><table style='color:red'>";
+     echo "<div id='scroll' class='modal-body' style='overflow: scroll'><table style='color:dimgrey'>";
             echo  "<tr>";
     echo "<th>ID</th>";
    echo  "<th>Firstname</th>";
@@ -93,7 +96,7 @@
     $r2=mysqli_fetch_array($r1);
    // $mem=$rows['Membership'];
      if ($r2['Membership']=="Secretary") {
-       echo "<form method='POST' action='update.php'><tr><td><input name='id' disabled class='borderless' value='".($rows['user_id'])."'/></td><td>".($rows['Firstname'])."</td><td>".($rows['Lastname'])."</td><td>".($rows['ZoneCode'])."</td><td><input name='view' type='button' value='View' class='btn btn-primary'></input><input name='Approve' value='Approve' disabled type='submit' class='btn btn-danger'></input></td></tr></form>";  
+       echo "<form method='POST' action='update.php'><tr><td><input name='id' disabled class='borderless' value='".($rows['user_id'])."'/></td><td>".($rows['Firstname'])."</td><td>".($rows['Lastname'])."</td><td>".($rows['ZoneCode'])."</td><td><input name='view' type='button' value='View' class='btn btn-primary'></input></td></tr></form>";  
  }
  if ($r2['Membership']=="Chairman") {
        echo "<form method='POST' action='update.php'><tr><td><input name='id' class='borderless' value='".($rows['user_id'])."'/></td><td>".($rows['Firstname'])."</td><td>".($rows['Lastname'])."</td><td>".($rows['ZoneCode'])."</td><td><input name='view' type='button' value='View' class='btn btn-primary'></input><input name='Approve' value='Approve' type='submit' class='btn btn-danger'></input></td></tr></form>";  

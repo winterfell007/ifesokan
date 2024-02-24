@@ -6,13 +6,16 @@
   <title>Reponsive Navbar</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
+  <?php 
+  session_start();
+  include("server.php"); 
+  ?>
 </head>
 <body>
   <header>
     
       <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="#">Icda</a>
+          <a class="navbar-brand" href="#">Icda <small> <?php echo ($_SESSION['cda']) ?> </small> </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
@@ -23,8 +26,7 @@
              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
            </li>
  <?php 
-   session_start();
-   include("server.php"); 
+   
    $mem='';
    $user=$_SESSION['Username'];
     $query="SELECT * FROM users WHERE Username='$user'";
@@ -36,7 +38,13 @@
         echo "<li class='nav-item dropdown'>
             <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> SEC </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-              <a class='dropdown-item' href='minute.php'>Minutes</a>
+<<<<<<< HEAD
+              <a class='dropdown-item' href='viewminutes.php'>View Minutes</a>
+              <a class='dropdown-item' href='uploadminutes.php'>Upload Minutes</a>
+=======
+              <a class='dropdown-item' href='viewminute.html'>Minutes</a>
+              <a class= 'dropdown-item'href='uploadminute.html'>Uplaod Minute</a>
+>>>>>>> e522bfe0dc1359b8fcf7d814a5880d003c06d5d5
               <a class='dropdown-item' href='registry.php'>Registry</a>
              
 
