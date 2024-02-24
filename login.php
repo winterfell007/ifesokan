@@ -94,8 +94,4 @@ if (isset($_POST['btn'])) {
 </body>
 </html>
 
-</html>
-
 <!-- jUST EDITED THE PAGE-->
-
-
